@@ -4,6 +4,7 @@
   /* padding: 2rem; */
   text-align: center;
   min-width: 500px;
+  box-sizing: border-box;
 }
 
 .logo {
