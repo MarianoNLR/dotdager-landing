@@ -1,5 +1,7 @@
 import '../styles/SectionScroll.css'
 import dotIcon from '../assets/icons/dot-small-svgrepo-com.svg'
+import leftArrow from '../assets/left-arrow.svg'
+import rightArrow from '../assets/right-arrow.svg'
 export function SectionScroll ({activeSection, setActiveSection}) {
 
     const handleChangeSectionRight = () => {
@@ -17,8 +19,8 @@ export function SectionScroll ({activeSection, setActiveSection}) {
     return (
         <div className='scroll-wrapper' style={{'--active-section': activeSection}}>
             <div className="scroll-main">
-                <div className='section-button-wrapper'>
-                    <button type="button" className='section-button' onClick={handleChangeSectionLeft} disabled={activeSection == 0}>←</button>
+                <div className='section-button-wrapper'> 
+                    <button type="button" className='section-button' onClick={handleChangeSectionLeft} disabled={activeSection == 0}><img src={leftArrow}></img></button>
                 </div>
                 {/* <img src={dotIcon} alt="" className='section-marker'/>
                 <img src={dotIcon} alt="" className='section-marker'/>
@@ -29,7 +31,7 @@ export function SectionScroll ({activeSection, setActiveSection}) {
                     <div className={`section-marker ${activeSection == 2 ? 'active' : ''}`}><span></span></div>
                 </div>
                 <div className='section-button-wrapper'>
-                    <button type="button" className='section-button' onClick={handleChangeSectionRight} disabled={activeSection == 2}>→</button>
+                    <button type="button" className='section-button' onClick={handleChangeSectionRight} disabled={activeSection == 2}><img src={rightArrow}></img></button>
                 </div>
             </div>
         </div>
