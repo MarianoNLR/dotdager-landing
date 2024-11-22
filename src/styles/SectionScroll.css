@@ -78,7 +78,7 @@
     height: 15px;
 }
 
-button img {
+.section-button img {
     width: 30px;
     height: 30px;
     object-fit: contain;

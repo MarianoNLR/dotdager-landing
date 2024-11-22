@@ -5,7 +5,7 @@ export function InterestCard ({img, className, children}) {
 
     return (
         <>
-        {console.log(img)}
+        
             <div className={`interest-wrapper ${className} `}>
                 <div className="interest-image-wrapper">
                     <ReactSVG src={img} className='interest-image' height={50} width={50}/>

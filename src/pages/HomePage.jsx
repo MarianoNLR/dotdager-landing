@@ -9,12 +9,14 @@ import philosophyIcon from '../assets/interests-images/philosophy-svgrepo-com.sv
 import IgIcon from '../assets/icons/instagram-svgrepo-com.svg'
 import GitIcon from '../assets/icons/github-142-svgrepo-com.svg'
 import YoutubeIcon from '../assets/icons/youtube-svgrepo-com.svg'
+import ArrowDownIcon from '../assets/icons/arrow-down.svg'
+import ArrowUpIcon from '../assets/icons/arrow-up.svg'
 import {ReactSVG} from 'react-svg';
-
 import '../styles/Home.css'
 import ContactMeTyping from '../components/ContactMeTyping.jsx'
 import { useLanguage } from '../LanguageProvider.jsx'
-
+import { VerticalSwapButton } from '../components/VerticalSwapButton.jsx'
+import '../styles/VerticalSwapButton.css'
 export default function HomePage () {
     const [activeSection, setActiveSection] = useState(0)
     const {language, setLanguage, texts} = useLanguage()
@@ -23,8 +25,9 @@ export default function HomePage () {
         <> 
             <Header setActiveSection={setActiveSection}></Header>
             <main className="main">
-            
+               
                 <div className='main-content' style={{'--active-section': activeSection}}>
+                    
                     <section className={`home ${activeSection == 0 ? 'show' : 'hidden'}`} id='home'>
                         <div className='home-section-background'></div>
                         <div className='home-info-wrapper'>
@@ -36,37 +39,29 @@ export default function HomePage () {
                                 <img className='channel-icon' src={channelIcon} alt="channel icon"/>
                             </div>
                         </div>
+                        <VerticalSwapButton icon={ArrowDownIcon} setActiveSection={setActiveSection} value={1} className={'next'}>Next</VerticalSwapButton>
                     </section>
                     <section className={`about-me ${activeSection == 1 ? 'show' : 'hidden'}`} id='about-me'>
-                    <div className='aboutme-section-background'></div>
-                        <div className='main-aboutme'>
-                            <h2>{texts[language].aboutMeTitle}</h2>
-                                <div className='interests-list'>
-                                <InterestCard img={catsIcon} className={"first"}>
-                                    {texts[language].aboutMeCats}
-                                </InterestCard>
-                                <InterestCard img={codingIcon} className="second">
-                                    {texts[language].aboutMeProgramming}
-                                </InterestCard>
-                                <InterestCard img={philosophyIcon} className="third">
-                                    {texts[language].aboutMePhilosophy}
-                                </InterestCard>
-                                {/* <InterestCard img={catsImage}>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eaque. Porro facere autem ullam rem, fuga dolore, velit quas aperiam quia veritatis eum atque! Dicta recusandae facilis tempore! Rerum, labore.
-                                    orem ipsum dolor sit amet consectetur, adipisicing elit. Non magnam quasi dicta ullam atque, minima inventore veritatis iusto nobis sit eveniet ad laudantium deserunt doloribus, maiores facilis architecto ipsum a?
-                                </InterestCard>
-                                <InterestCard img={catsImage}>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eaque. Porro facere autem ullam rem, fuga dolore, velit quas aperiam quia veritatis eum atque! Dicta recusandae facilis tempore! Rerum, labore.
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non magnam quasi dicta ullam atque, minima inventore veritatis iusto nobis sit eveniet ad laudantium deserunt doloribus, maiores facilis architecto ipsum a?
-                                </InterestCard>
-                                <InterestCard img={catsImage}>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eaque. Porro facere autem ullam rem, fuga dolore, velit quas aperiam quia veritatis eum atque! Dicta recusandae facilis tempore! Rerum, labore.
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non magnam quasi dicta ullam atque, minima inventore veritatis iusto nobis sit eveniet ad laudantium deserunt doloribus, maiores facilis architecto ipsum a?
-                                </InterestCard> */}
-                                </div>
-                        </div>
+                        <VerticalSwapButton icon={ArrowUpIcon} setActiveSection={setActiveSection} value={0} className='prev'>Prev</VerticalSwapButton>
+                        <div className='aboutme-section-background'></div>
+                            <div className='main-aboutme'>
+                                <h2>{texts[language].aboutMeTitle}</h2>
+                                    <div className='interests-list'>
+                                        <InterestCard img={catsIcon} className={"first"}>
+                                            {texts[language].aboutMeCats}
+                                        </InterestCard>
+                                        <InterestCard img={codingIcon} className="second">
+                                            {texts[language].aboutMeProgramming}
+                                        </InterestCard>
+                                        <InterestCard img={philosophyIcon} className="third">
+                                            {texts[language].aboutMePhilosophy}
+                                        </InterestCard>
+                                    </div>
+                            </div>
+                        <VerticalSwapButton icon={ArrowDownIcon} setActiveSection={setActiveSection} value={1} className={'next'}>Next</VerticalSwapButton>
                     </section>
                     <section className={`contact ${activeSection == 2 ? 'show' : 'hidden'}`} id='contact'>
+                    <VerticalSwapButton icon={ArrowUpIcon} setActiveSection={setActiveSection} value={0} className='prev'>Prev</VerticalSwapButton>
                     <div className='contact-section-background'></div>
                     <div className='main-contact'>
                             <ContactMeTyping text={texts[language].contactMeTitle}></ContactMeTyping>
@@ -80,6 +75,7 @@ export default function HomePage () {
                     </section>
                     <SectionScroll activeSection={activeSection} setActiveSection={setActiveSection}></SectionScroll>
                 </div>
+                
             </main>
         </>
     )

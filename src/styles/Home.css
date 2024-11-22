@@ -134,6 +134,7 @@ main {
     display: flex;
     min-width: 100dvw;
     height: 100dvh;
+    justify-content: center;
 }
 
 .contact-section-background {
@@ -221,7 +222,7 @@ main {
 @media (max-width: 1100px) {
     .home {
         width: 100vw;
-        min-width: 500px;
+        
     }
 
     .interests-list {
@@ -260,14 +261,11 @@ main {
     body {
         overflow-x: hidden;
     }
-    
+
     .home, .about-me, .contact {
         opacity: 1;
         min-height: 100dvh;
-    }
-
-    .about-me {
-        height: auto;
+        position: relative;
     }
 
     .interests-list {
@@ -294,16 +292,72 @@ main {
         font-size: 100%;
     }
 
-    .main-content {
-        flex-direction: column;
-        transform: translateY(calc(100dvh * 0));
-    }
-
     .interest-wrapper  {
         width: 100%;
     }
 
+}
+
+@media (max-width: 600px) { 
     .scroll-wrapper {
         display: none;
     }
+
+    .main-content {
+        flex-direction: column;
+        transform: translateY(calc(-100dvh * var(--active-section)));
+    }
 }
+
+
+@media (max-width: 500px) {
+
+    .home {
+        display: flex;
+        padding: 0;
+    }
+
+    .home-info-wrapper {
+        justify-content: flex-end;
+        /* height: 80%; */
+        width: 50%;
+    }
+
+    .home-text {
+        flex: 2;
+    }
+
+    .home-image-wrapper {
+        flex: 1;
+    }
+
+    .home-image {
+        height: auto;
+    }
+
+    .main-aboutme h2 {
+        font-size: 2rem;
+    }
+    
+    header span {
+        font-size: 1rem;
+    }
+
+    header select {
+        font-size: 1rem;
+    }
+
+    header select option{
+        font-size: 1rem;
+    }
+    
+}
+
+@media (max-width: 300px) {
+    .main-contact div {
+        font-size: 100% !important;
+    }
+    .social-wrapper {
+        flex-direction: column;
+    }
+ }
