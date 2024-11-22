@@ -21,6 +21,14 @@ export default function HomePage () {
     const [activeSection, setActiveSection] = useState(0)
     const {language, setLanguage, texts} = useLanguage()
 
+    function setViewportHeight() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    setViewportHeight();
+    window.addEventListener('resize', setViewportHeight);
+
     return (
         <> 
             <Header setActiveSection={setActiveSection}></Header>

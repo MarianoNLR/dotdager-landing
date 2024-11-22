@@ -266,6 +266,7 @@ main {
         opacity: 1;
         min-height: 100dvh;
         position: relative;
+        height: calc(var(--vh, 1vh) * 100);
     }
 
     .interests-list {
