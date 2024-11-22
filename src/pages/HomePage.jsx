@@ -49,8 +49,20 @@ export default function HomePage () {
                         <div className='home-section-background'></div>
                         <div className='home-info-wrapper'>
                             <div className="home-text">
-                                {/* ¡Hola! Soy Dot Dager, un amante de la programación con un toque de humor. En mis videos comparto contenido informativo sobre el fascinante mundo del código, mezclando datos curiosos, análisis y risas. Mi objetivo es hacer que descubras la programación desde una perspectiva divertida y entretenida. ¡Acompáñame y disfrutemos del viaje juntos! */}
-                                {texts[language].homeMainText}
+                                <span className='home-text-greeting'>
+                                    {texts[language].homeMainTextGreeting}
+                                </span>
+                                <span className='home-text-names'>
+                                    <TypingEffect 
+                                    text={[texts[language].homeMainTextSocialName,
+                                    texts[language].homeMainTextRealName]}
+                                    typeSpeed={150}
+                                    backSpeed={100}
+                                    >
+                                    </TypingEffect>
+                                </span>
+                                {/* <span className='home-text-name'>{texts[language].homeMainTextSocialName}</span> */}
+                                <p>{texts[language].homeMainText}</p>
                             </div>
                             <div className="home-image">
                                 <img className='channel-icon' src={channelIcon} alt="channel icon"/>
@@ -62,7 +74,7 @@ export default function HomePage () {
                         <VerticalSwapButton icon={ArrowUpIcon} setActiveSection={setActiveSection} value={0} className='prev'>Prev</VerticalSwapButton>
                         <div className='aboutme-section-background'></div>
                             <div className='main-aboutme'>
-                                <TypingEffect text={texts[language].aboutMeTitle} fontSize={"4rem"} typeSpeed={150} backSpeed={100}></TypingEffect>
+                                <TypingEffect text={[texts[language].aboutMeTitle]} fontSize={"4rem"} typeSpeed={150} backSpeed={100}></TypingEffect>
                                     <div className='interests-list'>
                                         <InterestCard img={catsIcon} className={`first ${activeSection == 1 ? 'visible' : 'hidden'}`}>
                                             {texts[language].aboutMeCats}
@@ -81,7 +93,7 @@ export default function HomePage () {
                     <VerticalSwapButton icon={ArrowUpIcon} setActiveSection={setActiveSection} value={0} className='prev'>Prev</VerticalSwapButton>
                     <div className='contact-section-background'></div>
                     <div className='main-contact'>
-                            <TypingEffect text={texts[language].contactMeTitle} fontSize={"4rem"} typeSpeed={150} backSpeed={100}></TypingEffect>
+                            <TypingEffect text={[texts[language].contactMeTitle]} fontSize={"4rem"} typeSpeed={150} backSpeed={100}></TypingEffect>
                             {/* <h2 className='contact-title' id="contact-me-text"></h2> */}
                             <div className='social-wrapper'>
                                 <a href="https://www.instagram.com/dager.32/" target='_blank'><img src={IgIcon} alt="" className='social-icon ig'/></a>

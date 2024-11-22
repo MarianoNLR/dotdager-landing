@@ -8,7 +8,7 @@ const TypingEffect = ({text,fontSize, typeSpeed, backSpeed}) => {
   useEffect(() => {
     // Configuración de Typed.js
     typed.current = new Typed(el.current, {
-      strings: [text],
+      strings: [...text],
       typeSpeed: typeSpeed,
       backSpeed: backSpeed,
       loop: true,
@@ -21,7 +21,7 @@ const TypingEffect = ({text,fontSize, typeSpeed, backSpeed}) => {
   }, [text]);
 
   return (
-    <div style={{ fontFamily: "system-ui, Arial, sans-serif", fontSize}}>
+    <div style={{fontSize}}>
       <span ref={el}></span>
     </div>
   );
