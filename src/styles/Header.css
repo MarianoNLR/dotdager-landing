@@ -6,6 +6,7 @@ header {
     display: flex;
     position: absolute;
     align-items: start;
+    justify-content: space-between;
     width: 100dvw;
     padding: .8rem;
     color: #4d4d4d;
@@ -16,4 +17,20 @@ header span {
     font-size: 2rem;
     font-weight: 600;
     color: aliceblue;
+}
+
+header select {
+    font-size: 2rem;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+header select option {
+    font-size: 2rem;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background-color: black;
 }

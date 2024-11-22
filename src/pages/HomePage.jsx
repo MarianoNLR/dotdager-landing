@@ -12,9 +12,11 @@ import YoutubeIcon from '../assets/icons/youtube-svgrepo-com.svg'
 
 import '../styles/Home.css'
 import ContactMeTyping from '../components/ContactMeTyping.jsx'
+import { useLanguage } from '../LanguageProvider.jsx'
 
 export default function HomePage () {
     const [activeSection, setActiveSection] = useState(0)
+    const {language, setLanguage, texts} = useLanguage()
 
     return (
         <> 
@@ -26,7 +28,8 @@ export default function HomePage () {
                         <div className='home-section-background'></div>
                         <div className='home-info-wrapper'>
                             <div className="home-text">
-                                ¡Hola! Soy Dot Dager, un amante de la programación con un toque de humor. En mis videos comparto contenido informativo sobre el fascinante mundo del código, mezclando datos curiosos, análisis y risas. Mi objetivo es hacer que descubras la programación desde una perspectiva divertida y entretenida. ¡Acompáñame y disfrutemos del viaje juntos!
+                                {/* ¡Hola! Soy Dot Dager, un amante de la programación con un toque de humor. En mis videos comparto contenido informativo sobre el fascinante mundo del código, mezclando datos curiosos, análisis y risas. Mi objetivo es hacer que descubras la programación desde una perspectiva divertida y entretenida. ¡Acompáñame y disfrutemos del viaje juntos! */}
+                                {texts[language].homeMainText}
                             </div>
                             <div className="home-image">
                                 <img className='channel-icon' src={channelIcon} alt="channel icon"/>
@@ -36,16 +39,16 @@ export default function HomePage () {
                     <section className={`about-me ${activeSection == 1 ? 'show' : 'hidden'}`} id='about-me'>
                     <div className='aboutme-section-background'></div>
                         <div className='main-aboutme'>
-                            <h2>Mis Intereses</h2>
+                            <h2>{texts[language].aboutMeTitle}</h2>
                                 <div className='interests-list'>
                                 <InterestCard img={catsImage} className={"first"}>
-                                    Los gatos son pequeños filósofos de la naturaleza, maestros del descanso y la curiosidad. Con su andar elegante y mirada penetrante, nos enseñan a disfrutar del momento, a buscar lo desconocido y a encontrar placer en las cosas simples. Más allá de su independencia, crean vínculos profundos con quienes les rodean, recordándonos que el amor se expresa de mil maneras, incluso con un ronroneo.
+                                    {texts[language].aboutMeCats}
                                 </InterestCard>
                                 <InterestCard img={programmingImage} className="second">
-                                    La programación es más que escribir líneas de código; es el arte de resolver problemas y dar vida a ideas a través de la tecnología. Es un lenguaje universal que conecta la lógica con la creatividad, permitiéndonos construir herramientas, experiencias y soluciones para un mundo digital en constante evolución. Aprender a programar no solo nos enseña cómo funcionan las máquinas, sino también cómo pensar de manera estructurada e innovadora.
+                                    {texts[language].aboutMeProgramming}
                                 </InterestCard>
                                 <InterestCard img={philosophyImage} className="third">
-                                    La filosofía es el arte de cuestionar lo que damos por sentado y de explorar las grandes preguntas que moldean nuestra existencia. Nos invita a reflexionar sobre quiénes somos, de dónde venimos y hacia dónde vamos, desafiando nuestras creencias y expandiendo nuestra perspectiva del mundo. Es un viaje sin fin hacia la comprensión, que conecta el pensamiento lógico con la creatividad y nos ayuda a encontrar sentido en lo cotidiano. ¿Te atreves a pensar más allá?
+                                    {texts[language].aboutMePhilosophy}
                                 </InterestCard>
                                 {/* <InterestCard img={catsImage}>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eaque. Porro facere autem ullam rem, fuga dolore, velit quas aperiam quia veritatis eum atque! Dicta recusandae facilis tempore! Rerum, labore.
@@ -65,7 +68,7 @@ export default function HomePage () {
                     <section className={`contact ${activeSection == 2 ? 'show' : 'hidden'}`} id='contact'>
                     <div className='contact-section-background'></div>
                     <div className='main-contact'>
-                            <ContactMeTyping></ContactMeTyping>
+                            <ContactMeTyping text={texts[language].contactMeTitle}></ContactMeTyping>
                             {/* <h2 className='contact-title' id="contact-me-text"></h2> */}
                             <div className='social-wrapper'>
                                 <a href="https://www.instagram.com/dager.32/" target='_blank'><img src={IgIcon} alt="" className='social-icon'/></a>
