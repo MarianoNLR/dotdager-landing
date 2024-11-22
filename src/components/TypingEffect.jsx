@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 
-const TypingEffect = ({text,fontSize, typeSpeed = 100, backSpeed = 100}) => {
+const TypingEffect = ({text,fontSize, typeSpeed, backSpeed}) => {
   const el = useRef(null); // Referencia al elemento donde se mostrará el texto
   const typed = useRef(null); // Referencia a la instancia de Typed.js
   console.log(fontSize)
@@ -21,7 +21,7 @@ const TypingEffect = ({text,fontSize, typeSpeed = 100, backSpeed = 100}) => {
   }, [text]);
 
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", fontSize}}>
+    <div style={{ fontFamily: "system-ui, Arial, sans-serif", fontSize}}>
       <span ref={el}></span>
     </div>
   );

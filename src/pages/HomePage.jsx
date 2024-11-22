@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import channelIcon from '../assets/channel-icon.png'
 import { SectionScroll } from '../components/SectionScroll'
 import { InterestCard } from '../components/InterestCard.jsx'
@@ -18,8 +18,17 @@ import { useLanguage } from '../LanguageProvider.jsx'
 import { VerticalSwapButton } from '../components/VerticalSwapButton.jsx'
 import '../styles/VerticalSwapButton.css'
 export default function HomePage () {
-    const [activeSection, setActiveSection] = useState(0)
+    const [activeSection, setActiveSection] = useState(null)
     const {language, setLanguage, texts} = useLanguage()
+
+    useEffect(() => {
+        // Activar animación al cargar la página
+        const timer = setTimeout(() => {
+          setActiveSection(0);
+        }, 100); // Agregar un pequeño retraso opcional
+    
+        return () => clearTimeout(timer); // Limpiar si se desmonta
+      }, []);
 
     function setViewportHeight() {
         const vh = window.innerHeight * 0.01;
@@ -53,7 +62,7 @@ export default function HomePage () {
                         <VerticalSwapButton icon={ArrowUpIcon} setActiveSection={setActiveSection} value={0} className='prev'>Prev</VerticalSwapButton>
                         <div className='aboutme-section-background'></div>
                             <div className='main-aboutme'>
-                                <TypingEffect text={texts[language].aboutMeTitle} fontSize={"4rem"}></TypingEffect>
+                                <TypingEffect text={texts[language].aboutMeTitle} fontSize={"4rem"} typeSpeed={150} backSpeed={100}></TypingEffect>
                                     <div className='interests-list'>
                                         <InterestCard img={catsIcon} className={`first ${activeSection == 1 ? 'visible' : 'hidden'}`}>
                                             {texts[language].aboutMeCats}
@@ -72,12 +81,12 @@ export default function HomePage () {
                     <VerticalSwapButton icon={ArrowUpIcon} setActiveSection={setActiveSection} value={0} className='prev'>Prev</VerticalSwapButton>
                     <div className='contact-section-background'></div>
                     <div className='main-contact'>
-                            <TypingEffect text={texts[language].contactMeTitle} fontSize={"4rem"}></TypingEffect>
+                            <TypingEffect text={texts[language].contactMeTitle} fontSize={"4rem"} typeSpeed={150} backSpeed={100}></TypingEffect>
                             {/* <h2 className='contact-title' id="contact-me-text"></h2> */}
                             <div className='social-wrapper'>
-                                <a href="https://www.instagram.com/dager.32/" target='_blank'><img src={IgIcon} alt="" className='social-icon'/></a>
-                                <a href="https://www.youtube.com/@DotDager"  target='_blank'><img src={YoutubeIcon} alt="" className='social-icon'/></a>
-                                <a href="https://github.com/MarianoVilla"  target='_blank'><img src={GitIcon} alt="" className='social-icon'/></a>
+                                <a href="https://www.instagram.com/dager.32/" target='_blank'><img src={IgIcon} alt="" className='social-icon ig'/></a>
+                                <a href="https://www.youtube.com/@DotDager"  target='_blank'><img src={YoutubeIcon} alt="" className='social-icon youtube'/></a>
+                                <a href="https://github.com/MarianoVilla"  target='_blank'><img src={GitIcon} alt="" className='social-icon git'/></a>
                             </div>
                         </div>
                     </section>

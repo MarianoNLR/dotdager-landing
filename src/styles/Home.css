@@ -74,6 +74,43 @@ main {
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
+.home.show .home-section-background{
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    opacity: .2;
+}
+
+.home.show .home-info-wrapper .home-image {
+    animation: image-in 2s alternate forwards;
+}
+
+.home.show .home-info-wrapper .home-text {
+    animation: text-in 2s alternate forwards;
+}
+
+@keyframes image-in {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes text-in {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes border-opacity {
     0% {
         border: 8px solid rgba(116, 74, 255, 0.386);
@@ -178,6 +215,45 @@ main {
 .social-icon:hover {
     cursor: pointer;
     scale: 1.2;
+}
+
+.contact.show .social-icon.git {
+    animation: git-translate 1.5s alternate forwards;
+}
+
+.contact.show .social-icon.youtube {
+    animation: youtube-translate 1.5s alternate forwards;
+}
+
+.contact.show .social-icon.ig {
+    animation: instagram-translate 1.5s alternate forwards;
+}
+
+@keyframes git-translate {
+    0% {
+        transform: translateX(50px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes youtube-translate {
+    0% {
+        transform: translateY(50px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes instagram-translate {
+    0% {
+        transform: translateX(-50px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
 }
 
 /* General */
@@ -338,7 +414,7 @@ main {
         height: auto;
     }
 
-    .main-aboutme h2 {
+    .main-aboutme span {
         font-size: 2rem;
     }
     
@@ -362,5 +438,14 @@ main {
     }
     .social-wrapper {
         flex-direction: column;
+    }
+
+    @keyframes youtube-translate {
+        0% {
+            opacity: 0;;
+        }
+        100% {
+            opacity: 1;
+        }
     }
  }
