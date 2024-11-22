@@ -20,7 +20,7 @@ export default function HomePage () {
 
     return (
         <> 
-            <Header></Header>
+            <Header setActiveSection={setActiveSection}></Header>
             <main className="main">
             
                 <div className='main-content' style={{'--active-section': activeSection}}>

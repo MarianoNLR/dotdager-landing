@@ -13,6 +13,10 @@ header {
     z-index: 1;
 }
 
+.header-title {
+ cursor: pointer;
+}
+
 header span {
     font-size: 2rem;
     font-weight: 600;
@@ -25,6 +29,7 @@ header select {
     border: none;
     outline: none;
     background-color: transparent;
+    cursor: pointer;
 }
 
 header select option {
