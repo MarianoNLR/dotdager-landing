@@ -1,12 +1,14 @@
 import '../styles/InterestCard.css'
+import {ReactSVG} from 'react-svg';
 
 export function InterestCard ({img, className, children}) {
 
     return (
         <>
+        {console.log(img)}
             <div className={`interest-wrapper ${className} `}>
                 <div className="interest-image-wrapper">
-                    <img className="interest-image" src={img}  alt=""/>
+                    <ReactSVG src={img} className='interest-image' height={50} width={50}/>
                 </div>
                 <div className="interest-text">
                     {children}

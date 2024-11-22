@@ -3,12 +3,13 @@ import channelIcon from '../assets/channel-icon.png'
 import { SectionScroll } from '../components/SectionScroll'
 import { InterestCard } from '../components/InterestCard.jsx'
 import { Header } from '../components/Header.jsx'
-import catsImage from '../assets/interests-images/cats-image.jpg'
-import programmingImage from '../assets/interests-images/programming-image.jpg'
-import philosophyImage from '../assets/interests-images/philosophy-image.png'
+import catsIcon from '../assets/interests-images/cat-icon.svg'
+import codingIcon from '../assets/interests-images/coding-icon.svg'
+import philosophyIcon from '../assets/interests-images/philosophy-svgrepo-com.svg'
 import IgIcon from '../assets/icons/instagram-svgrepo-com.svg'
 import GitIcon from '../assets/icons/github-142-svgrepo-com.svg'
 import YoutubeIcon from '../assets/icons/youtube-svgrepo-com.svg'
+import {ReactSVG} from 'react-svg';
 
 import '../styles/Home.css'
 import ContactMeTyping from '../components/ContactMeTyping.jsx'
@@ -41,13 +42,13 @@ export default function HomePage () {
                         <div className='main-aboutme'>
                             <h2>{texts[language].aboutMeTitle}</h2>
                                 <div className='interests-list'>
-                                <InterestCard img={catsImage} className={"first"}>
+                                <InterestCard img={catsIcon} className={"first"}>
                                     {texts[language].aboutMeCats}
                                 </InterestCard>
-                                <InterestCard img={programmingImage} className="second">
+                                <InterestCard img={codingIcon} className="second">
                                     {texts[language].aboutMeProgramming}
                                 </InterestCard>
-                                <InterestCard img={philosophyImage} className="third">
+                                <InterestCard img={philosophyIcon} className="third">
                                     {texts[language].aboutMePhilosophy}
                                 </InterestCard>
                                 {/* <InterestCard img={catsImage}>
