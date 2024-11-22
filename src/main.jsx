@@ -5,11 +5,11 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { LanguageProvider } from './LanguageProvider.jsx'
 
-
+const basename = "/dotdager-landing"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <LanguageProvider>
         <App />
       </LanguageProvider>
