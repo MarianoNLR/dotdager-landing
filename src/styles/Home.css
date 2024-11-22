@@ -213,10 +213,6 @@ main {
         height: auto;
         width: 40%;
     }
-
-    .home-text {
-        font-size: 1rem;
-    }
 }
 
 @media (max-width: 1100px) {
@@ -267,6 +263,10 @@ main {
         min-height: 100dvh;
         position: relative;
         height: calc(var(--vh, 1vh) * 100);
+    }
+
+    .home-text {
+        font-size: 1rem;
     }
 
     .interests-list {
