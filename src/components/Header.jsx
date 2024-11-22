@@ -1,11 +1,10 @@
 import '../styles/Header.css'
 import { useLanguage } from '../LanguageProvider.jsx'
-import { SelectLanguage } from './SelectLanguage'
+import { SelectLanguage } from './SelectLanguage.jsx'
 export function Header ({setActiveSection}) {
-    const {setLanguage} = useLanguage()
     return (
         <header>
-            <span onClick={() => setActiveSection(0)} className='header-title'>Dot Dager</span>
+            <div onClick={() => setActiveSection(0)} className='header-title'><span>Dot Dager</span></div>
             <SelectLanguage></SelectLanguage>
         </header>
     )

@@ -7,13 +7,22 @@ header {
     position: absolute;
     justify-content: space-between;
     width: 100dvw;
-    padding: .8rem;
+    padding: .8rem 2rem;
     color: #4d4d4d;
     z-index: 1;
 }
 
 .header-title {
- cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header-title {
+    font-size: 2rem;
+    font-family: Arial, sans-serif;
+
 }
 
 header span {
