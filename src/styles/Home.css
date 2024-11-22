@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
 * {
     box-sizing: border-box;
 }
@@ -28,6 +29,19 @@ main {
     height: 100dvh;
     padding: 0rem 20rem;
     gap: 2.5rem;
+    z-index: 1;
+}
+
+.home-info-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.home-text {
+    font-family: 'Doto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
 }
 
 .home-section-background {
@@ -46,7 +60,7 @@ main {
     height: 100%;
     background: rgb(21,23,27);
     background: linear-gradient(0deg, rgba(21,23,27,1) 0%, rgba(100,34,115,1) 38%, rgba(212,0,193,1) 100%);
-    z-index: -1;
+    z-index: -2;
     opacity: 0.2;
 }
 
@@ -56,7 +70,7 @@ main {
     height: 100%;
     background: rgb(21,23,27);
     background: linear-gradient(180deg, rgba(21,23,27,1) 0%, rgba(87,36,135,1) 38%, rgba(157,0,254,1) 100%);
-    z-index: -1;
+    z-index: -3;
     opacity: 0.2;
 }
 
@@ -64,13 +78,28 @@ main {
 .about-me,
 .contact {
     opacity: 0;
+    
+}
+
+.home-image {
+    
 }
 
 .channel-icon {
-    height: 300px;
-    width: 300px;
+    height: 100%;
+    width: 400px;
     border-radius: 50%;
-    object-fit: contain;
+    object-fit: cover;
+    animation: border-opacity 1.5s 1s alternate-reverse infinite;
+}
+
+@keyframes border-opacity {
+    0% {
+        border: 8px solid rgba(116, 74, 255, 0.386);
+    }
+    100% {
+        border: 8px solid rgba(116, 74, 255, 0);
+    }
 }
 
 .about-me {
@@ -85,9 +114,20 @@ main {
     display: flex;
     /* grid-template-columns: 1fr 1fr 1fr 1fr; */
     grid-row: 200px;
-    flex-direction: row;
+    flex-direction: column;
     gap: 2rem;
     padding: 2rem;
+    z-index: 1;
+}
+
+.main-aboutme h2 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+.interests-list {
+    display: flex;
+    gap: 2rem;
 }
 
 /* .first {
@@ -116,11 +156,12 @@ main {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    z-index: 1;
 }
 
 .contact-title {
     margin: 0;
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 .social-wrapper {
@@ -133,11 +174,12 @@ main {
     opacity: 1;
 }
 
-.hidden {
-    
+.social-icon {
+    width: 4rem;
+    height: 4rem;
 }
 
-.social-icon {
-    width: 2.5rem;
-    height: 2.5rem;
+.social-icon:hover {
+    cursor: pointer;
+    scale: 1.2;
 }
