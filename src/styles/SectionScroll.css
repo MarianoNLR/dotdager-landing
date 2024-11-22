@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+
+.scroll-wrapper {
+    width: 100dvw;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 2rem;
+}
+
+.scroll-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .2rem;
+    margin: auto;
+    transform: translateX(calc(100dvw * var(--active-section)));
+}
+
+.section-button-wrapper {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.section-button {
+    border-radius: 100%;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background-color: transparent;
+    transform: translateY(-3px);
+}
+
+.markers-wrapper {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.section-marker {
+    display: flex;
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.section-marker span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: aliceblue;
+    border-radius: 50%;
+}
+
+.active span{
+    width: 15px;
+    height: 15px;
+}

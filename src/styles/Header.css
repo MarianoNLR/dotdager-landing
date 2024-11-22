@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    position: absolute;
+    align-items: start;
+    width: 100dvw;
+    padding: .8rem;
+    color: #4d4d4d;
+    z-index: 1;
+}
+
+header span {
+    font-size: 2rem;
+    font-weight: 600;
+    color: aliceblue;
+}
