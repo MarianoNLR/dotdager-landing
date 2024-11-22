@@ -4,7 +4,6 @@ import Typed from "typed.js";
 const TypingEffect = ({text,fontSize, typeSpeed, backSpeed}) => {
   const el = useRef(null); // Referencia al elemento donde se mostrará el texto
   const typed = useRef(null); // Referencia a la instancia de Typed.js
-  console.log(fontSize)
   useEffect(() => {
     // Configuración de Typed.js
     typed.current = new Typed(el.current, {

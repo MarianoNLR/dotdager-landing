@@ -5,15 +5,11 @@ import rightArrow from '../assets/right-arrow.svg'
 export function SectionScroll ({activeSection, setActiveSection}) {
 
     const handleChangeSectionRight = () => {
-        
-        setActiveSection(prev => prev + 1)
-        console.log(activeSection)
+        setActiveSection(prev => prev + 1) 
     }
 
     const handleChangeSectionLeft = () => {
-        
         setActiveSection(prev => prev - 1)
-        console.log(activeSection)
     }
 
     return (
