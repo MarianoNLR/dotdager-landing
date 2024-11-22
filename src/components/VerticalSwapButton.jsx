@@ -1,7 +1,11 @@
 import { ReactSVG } from "react-svg"
 import '../styles/VerticalSwapButton.css'
-export function VerticalSwapButton ({icon, value, setActiveSection, className, children}) {
+export function VerticalSwapButton ({icon, value, setActiveSection, className, children, setLumberIsActive}) {
     const changeActiveSection = () => {
+        if (value == 2) {
+            setLumberIsActive(true)
+            return
+        }
         if (value === 1) {
             setActiveSection(prev => prev + 1)
         } 

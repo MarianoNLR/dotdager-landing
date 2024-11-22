@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import channelIcon from '../assets/channel-icon.png'
 import { SectionScroll } from '../components/SectionScroll'
 import { InterestCard } from '../components/InterestCard.jsx'
@@ -11,6 +11,7 @@ import GitIcon from '../assets/icons/github-142-svgrepo-com.svg'
 import YoutubeIcon from '../assets/icons/youtube-svgrepo-com.svg'
 import ArrowDownIcon from '../assets/icons/arrow-down.svg'
 import ArrowUpIcon from '../assets/icons/arrow-up.svg'
+import QuestionMark from '../assets/icons/question-mark.svg'
 import {ReactSVG} from 'react-svg';
 import '../styles/Home.css'
 import TypingEffect from '../components/TypingEffect.jsx'
@@ -20,6 +21,7 @@ import '../styles/VerticalSwapButton.css'
 export default function HomePage () {
     const [activeSection, setActiveSection] = useState(null)
     const {language, setLanguage, texts} = useLanguage()
+    const [lumberIsActive, setLumberIsActive] = useState(false)
 
     useEffect(() => {
         // Activar animación al cargar la página
@@ -37,6 +39,11 @@ export default function HomePage () {
 
     setViewportHeight();
     window.addEventListener('resize', setViewportHeight);
+
+    const closeLumberJack = () => {
+        setLumberIsActive(false)
+
+    }
 
     return (
         <> 
@@ -74,7 +81,9 @@ export default function HomePage () {
                         <VerticalSwapButton icon={ArrowUpIcon} setActiveSection={setActiveSection} value={0} className='prev'>Prev</VerticalSwapButton>
                         <div className='aboutme-section-background'></div>
                             <div className='main-aboutme'>
-                                <TypingEffect text={[texts[language].aboutMeTitle]} fontSize={"4rem"} typeSpeed={150} backSpeed={100}></TypingEffect>
+                                <span className='about-me-title'>
+                                    <TypingEffect text={[texts[language].aboutMeTitle]} typeSpeed={150} backSpeed={100}></TypingEffect>
+                                </span>
                                     <div className='interests-list'>
                                         <InterestCard img={catsIcon} className={`first ${activeSection == 1 ? 'visible' : 'hidden'}`}>
                                             {texts[language].aboutMeCats}
@@ -101,10 +110,18 @@ export default function HomePage () {
                                 <a href="https://github.com/MarianoVilla"  target='_blank'><img src={GitIcon} alt="" className='social-icon git'/></a>
                             </div>
                         </div>
+                        <VerticalSwapButton icon={QuestionMark} setActiveSection={setActiveSection} value={2} className={'next'} setLumberIsActive={setLumberIsActive}>Next</VerticalSwapButton>
                     </section>
-                    <SectionScroll activeSection={activeSection} setActiveSection={setActiveSection}></SectionScroll>
+                    <SectionScroll activeSection={activeSection} 
+                    setActiveSection={setActiveSection}
+                    setLumberIsActive={setLumberIsActive}></SectionScroll>
                 </div>
+                <div 
                 
+                className={`lumber-jack-container ${lumberIsActive ? 'lumber-active' : 'lumber-inactive'}`}>
+                    <iframe src="https://tbot.xyz/lumber/" allowFullScreen></iframe>
+                    <div className='close-lumber' onClick={() => closeLumberJack()}>x</div>
+                </div>
             </main>
         </>
     )

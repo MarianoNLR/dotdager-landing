@@ -2,10 +2,16 @@ import '../styles/SectionScroll.css'
 import dotIcon from '../assets/icons/dot-small-svgrepo-com.svg'
 import leftArrow from '../assets/left-arrow.svg'
 import rightArrow from '../assets/right-arrow.svg'
-export function SectionScroll ({activeSection, setActiveSection}) {
+import questionMark from '../assets/icons/question-mark.svg'
+export function SectionScroll ({activeSection, setActiveSection, setLumberIsActive}) {
 
     const handleChangeSectionRight = () => {
-        setActiveSection(prev => prev + 1) 
+        if (activeSection == 2) {
+            setLumberIsActive(true)
+            return
+        }
+        setActiveSection(prev => prev + 1)
+        
     }
 
     const handleChangeSectionLeft = () => {
@@ -27,7 +33,7 @@ export function SectionScroll ({activeSection, setActiveSection}) {
                     <div className={`section-marker ${activeSection == 2 ? 'active' : ''}`}><span></span></div>
                 </div>
                 <div className='section-button-wrapper'>
-                    <button type="button" className='section-button' onClick={handleChangeSectionRight} disabled={activeSection == 2}><img src={rightArrow}></img></button>
+                    <button type="button" className='section-button' onClick={handleChangeSectionRight}><img src={activeSection < 2 ? rightArrow : questionMark}></img></button>
                 </div>
             </div>
         </div>
