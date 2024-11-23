@@ -123,7 +123,11 @@ export default function HomePage () {
                 
                 className={`lumber-jack-container ${lumberIsActive ? 'lumber-active' : 'lumber-inactive'}`}>
                     <iframe src="https://tbot.xyz/lumber/" allowFullScreen></iframe>
-                    <div className='close-lumber' onClick={() => closeLumberJack()}>x</div>
+                    <div className='close-lumber-container'>
+                        <div className='close-lumber-container-inner'>
+                            <div className='close-lumber' onClick={() => closeLumberJack()}>x</div>
+                        </div>
+                    </div>
                 </div>
             </main>
         </>

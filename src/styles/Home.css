@@ -590,6 +590,23 @@ main {
     position: relative;
 }
 
+.close-lumber-container {
+    position: absolute;
+    top: 0;
+    display: flex;
+    height: 200px;
+    width: 100%;
+    justify-content: center;
+}
+
+.close-lumber-container-inner {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    width: 600px;
+    padding-right: 1rem;
+}
+
  .close-lumber {
     position: absolute;
     display: flex;
