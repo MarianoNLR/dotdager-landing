@@ -12,6 +12,9 @@ import YoutubeIcon from '../assets/icons/youtube-svgrepo-com.svg'
 import ArrowDownIcon from '../assets/icons/arrow-down.svg'
 import ArrowUpIcon from '../assets/icons/arrow-up.svg'
 import QuestionMark from '../assets/icons/question-mark.svg'
+import catsImage from '../assets/interests-images/cats-image.jpg'
+import philosophyImage from '../assets/interests-images/philosophy-image.png'
+import programmingImage from '../assets/interests-images/programming-image.jpg'
 import {ReactSVG} from 'react-svg';
 import '../styles/Home.css'
 import TypingEffect from '../components/TypingEffect.jsx'
@@ -85,13 +88,13 @@ export default function HomePage () {
                                     <TypingEffect text={[texts[language].aboutMeTitle]} typeSpeed={150} backSpeed={100}></TypingEffect>
                                 </span>
                                     <div className='interests-list'>
-                                        <InterestCard img={catsIcon} className={`first ${activeSection == 1 ? 'visible' : 'hidden'}`}>
+                                        <InterestCard img={catsImage} className={`first ${activeSection == 1 ? 'visible' : 'hidden'}`}>
                                             {texts[language].aboutMeCats}
                                         </InterestCard>
-                                        <InterestCard img={codingIcon} className={`second ${activeSection == 1 ? 'visible' : 'hidden'}`}>
+                                        <InterestCard img={programmingImage} className={`second ${activeSection == 1 ? 'visible' : 'hidden'}`}>
                                             {texts[language].aboutMeProgramming}
                                         </InterestCard>
-                                        <InterestCard img={philosophyIcon} className={`third ${activeSection == 1 ? 'visible' : 'hidden'}`}>
+                                        <InterestCard img={philosophyImage} className={`third ${activeSection == 1 ? 'visible' : 'hidden'}`}>
                                             {texts[language].aboutMePhilosophy}
                                         </InterestCard>
                                     </div>
@@ -105,9 +108,9 @@ export default function HomePage () {
                             <TypingEffect text={[texts[language].contactMeTitle]} fontSize={"4rem"} typeSpeed={150} backSpeed={100}></TypingEffect>
                             {/* <h2 className='contact-title' id="contact-me-text"></h2> */}
                             <div className='social-wrapper'>
-                                <a href="https://www.instagram.com/dager.32/" target='_blank'><img src={IgIcon} alt="" className='social-icon ig'/></a>
-                                <a href="https://www.youtube.com/@DotDager"  target='_blank'><img src={YoutubeIcon} alt="" className='social-icon youtube'/></a>
-                                <a href="https://github.com/MarianoVilla"  target='_blank'><img src={GitIcon} alt="" className='social-icon git'/></a>
+                                <div className='social-icon-wrapper'><a href="https://www.instagram.com/dager.32/" target='_blank'><img src={IgIcon} alt="" className='social-icon ig'/></a></div>
+                                <div className='social-icon-wrapper'><a href="https://www.youtube.com/@DotDager"  target='_blank'><img src={YoutubeIcon} alt="" className='social-icon youtube'/></a></div>
+                                <div className='social-icon-wrapper'><a href="https://github.com/MarianoVilla"  target='_blank'><img src={GitIcon} alt="" className='social-icon git'/></a></div>
                             </div>
                         </div>
                         <VerticalSwapButton icon={QuestionMark} setActiveSection={setActiveSection} value={2} className={'next'} setLumberIsActive={setLumberIsActive}>Next</VerticalSwapButton>
